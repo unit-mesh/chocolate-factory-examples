@@ -1,1 +1,1 @@
-rootProject.name = "cf.example"
+rootProject.name = "ChocolateFactoryExample"
