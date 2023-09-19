@@ -12,7 +12,7 @@ Documents: [https://framework.unitmesh.cc/](https://framework.unitmesh.cc/)
 
 用户的查询条件：Semantic Workflow 是如何实现的？
 
-查询条件：
+生成的中间 DSL：
 
 - question: Semantic Workflow 是如何实现的？
 - englishQuery: How is Semantic Workflow implemented?
@@ -37,7 +37,7 @@ public class SemanticWorkflow {
 }
 ```
 
-代码片段：
+相关代码片段：
 
 ```bash
 0.7847863 // canonicalName: cc.unitmesh.cf.domains.semantic.CodeSemanticWorkflowTest
@@ -52,7 +52,7 @@ public class SemanticWorkflow {
 0.807935 // canonicalName: cc.unitmesh.cf.domains.semantic.CodeSemanticWorkflow.execute
 ```
 
-## 输出
+## 最后输出
 
 根据提供的代码，我们可以看到 CodeSemanticWorkflow 是一个继承自 Workflow 的类，它实现了 execute 方法来执行语义化的代码搜索。
 
