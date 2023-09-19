@@ -10,15 +10,14 @@ Documents: [https://framework.unitmesh.cc/](https://framework.unitmesh.cc/)
 
 ## 查询过程
 
+用户的查询条件：Semantic Workflow 是如何实现的？
+
 查询条件：
 
-question: Semantic Workflow 是如何实现的？
-
-englishQuery: How is Semantic Workflow implemented?
-
-originLanguageQuery: Semantic Workflow 是如何实现的？
-
-hypotheticalCode:
+- question: Semantic Workflow 是如何实现的？
+- englishQuery: How is Semantic Workflow implemented?
+- originLanguageQuery: Semantic Workflow 是如何实现的？
+- hypotheticalCode:
 ```kotlin
 public class SemanticWorkflow {
    private WorkflowEngine engine;
