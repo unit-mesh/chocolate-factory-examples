@@ -2,6 +2,11 @@
 
 Documents: [https://framework.unitmesh.cc/](https://framework.unitmesh.cc/)
 
+## 相关论文
+
+- [Query2doc: Query Expansion with Large Language Models](https://arxiv.org/abs/2303.07678)
+- [Precise Zero-Shot Dense Retrieval without Relevance Labels](https://arxiv.org/abs/2212.10496)
+- [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)
 
 ## 查询过程
 
