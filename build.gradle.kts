@@ -33,8 +33,13 @@ dependencies {
 	implementation("org.apache.velocity:velocity-engine-core:2.3")
 	implementation("io.reactivex.rxjava3:rxjava:3.1.7")
 
+	// ArchGuard 背后的代码抽象模型 Chapi
+	implementation("com.phodal.chapi:chapi-domain:2.1.3")
+
 	// 核心库
 	implementation("cc.unitmesh:cocoa-core:0.2.4")
+	// 代码拆分
+	implementation("cc.unitmesh:code-splitter:0.2.4")
 	// Elastisearch 向量化存储，普通搜索
 	implementation("cc.unitmesh:store-elasticsearch:0.2.4")
 	// 本地化的 embedding

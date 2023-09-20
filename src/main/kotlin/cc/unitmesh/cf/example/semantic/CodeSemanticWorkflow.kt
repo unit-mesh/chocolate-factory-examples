@@ -43,10 +43,10 @@ class CodeSemanticWorkflow : Workflow() {
      * 核心 workflow
      */
     override fun execute(prompt: StageContext, chatWebContext: ChatWebContext): Flowable<WorkflowResult> {
-        val store = ElasticsearchStore(elasticsearchUrl)
+        val store = ElasticsearchStore(elasticsearchUrl, indexName = "cf-example")
         // 取最后一条消息
         val question = chatWebContext.messages.last().content
-        // 生成语义化分析后的 DSL，如 hydecode, query, originQuery
+        // 生成语义化分析后的 DSL，包含问题、英文、中文、假设式文档（hypotheticalCode）
         val analyze = SemanticProblemAnalyzer(llmProvider)
             .analyze(domainName, question)
 
