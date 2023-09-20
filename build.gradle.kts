@@ -23,14 +23,10 @@ repositories {
 extra["springBootAdminVersion"] = "3.1.5"
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-	implementation("de.codecentric:spring-boot-admin-starter-server")
 
 	implementation("com.theokanning.openai-gpt3-java:service:0.14.0")
 	implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
@@ -38,15 +34,10 @@ dependencies {
 	implementation("com.knuddels:jtokkit:0.6.1")
 	implementation("org.apache.velocity:velocity-engine-core:2.3")
 
-	//     implementation 'cc.unitmesh:cocoa-core:0.2.4'
 	implementation("cc.unitmesh:cocoa-core:0.2.4")
 	implementation("cc.unitmesh:store-elasticsearch:0.2.4")
 	implementation("cc.unitmesh:sentence-transformers:0.2.4")
 	implementation("io.reactivex.rxjava3:rxjava:3.1.7")
-
-	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
 	runtimeOnly("com.h2database:h2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
