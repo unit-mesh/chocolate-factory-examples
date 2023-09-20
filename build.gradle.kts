@@ -38,10 +38,10 @@ dependencies {
 	implementation("com.knuddels:jtokkit:0.6.1")
 	implementation("org.apache.velocity:velocity-engine-core:2.3")
 
-	//     implementation 'cc.unitmesh:cocoa-core:0.2.3'
-	implementation("cc.unitmesh:cocoa-core:0.2.3")
-	implementation("cc.unitmesh:store-elasticsearch:0.2.3")
-	implementation("cc.unitmesh:sentence-transformers:0.2.3")
+	//     implementation 'cc.unitmesh:cocoa-core:0.2.4'
+	implementation("cc.unitmesh:cocoa-core:0.2.4")
+	implementation("cc.unitmesh:store-elasticsearch:0.2.4")
+	implementation("cc.unitmesh:sentence-transformers:0.2.4")
 	implementation("io.reactivex.rxjava3:rxjava:3.1.7")
 
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
