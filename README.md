@@ -1,6 +1,11 @@
 # Chocolate Factory
 
-Documents: [https://framework.unitmesh.cc/](https://framework.unitmesh.cc/)
+![Query && Indexing](docs/query-indexing.png)
+
+Documents:
+
+- RAG: [https://framework.unitmesh.cc/docs/rag](https://framework.unitmesh.cc/docs/rag)
+- 代码拆分：https://framework.unitmesh.cc/docs/code-splitter
 
 ## 相关论文
 
