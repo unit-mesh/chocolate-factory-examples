@@ -34,20 +34,23 @@ class SemanticSolutionExecutor(
 
     override fun execute(solution: ExplainQuery): Flowable<Answer> {
         variables.putQuery(solution)
+        // 将问题的英文、中文、假设式文档转换为向量
         val query = embedding.embed(solution.englishQuery)
         val originQuery = embedding.embed(solution.originLanguageQuery)
         val hypotheticalCode = embedding.embed(solution.hypotheticalCode)
 
+        // 进行相似度匹配
         val hydeDocs = store.findRelevant(hypotheticalCode, 15, 0.65)
         val list = store.findRelevant(query, 15, 0.65)
         val originLangList = store.findRelevant(originQuery, 15, 0.65)
 
-        // remove duplicate in hydeDocs, list, originList
+        // 删除重复的文档
         val relevantDocuments = (hydeDocs + list + originLangList)
             .distinctBy { it.embedded.text }
             .sortedByDescending { it.score }
             .take(15)
 
+        // 根据 Token 的长度限制，动态调整代码片段的数量
         val codes: MutableList<Pair<Double, String>> = mutableListOf()
         relevantDocuments.forEach {
             codes.add(it.score to it.embedded.text)
@@ -60,10 +63,11 @@ class SemanticSolutionExecutor(
             }
         }
 
+        // 根据 Lost In Middle 算法重新排序，即将 score 低的代码片段放在中间，score 高的放在两边
         val reorderCodes = DocumentOrder.lostInMiddleReorder(codes)
+
         variables.putCode("", reorderCodes.map { it.second })
         val finalPrompt = variables.compile(basePrompt)
-
 
         val messages = listOf(
             LlmMsg.ChatMessage(LlmMsg.ChatRole.User, finalPrompt),
