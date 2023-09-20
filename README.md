@@ -99,4 +99,55 @@ java -jar scanner_cli-2.0.6-all.jar --language=Kotlin --output=http --server-url
 path=/Volumes/source/ai/chocolate-factory --with-function-code
 ```
 
+## 调试示例
+
+执行：[API-Request.http](./API-Request.http)
+
+结果示例：
+
+
+```debug
+查询条件：
+
+question: Kotlin 代码是如何分析和处理的？
+englishQuery: analyze and process Kotlin code
+originLanguageQuery: // Kotlin 代码分析和处理的方法
+hypotheticalCode:
+val code = """
+    fun calculateSum(a: Int, b: Int): Int {
+        return a + b
+    }
+"""
+
+val tree = KotlinParser().parse(code)
+val analyzer = KotlinAnalyzer()
+val result = analyzer.analyze(tree)
+val processedCode = KotlinProcessor().process(result)
+
+代码片段：
+
+0.788222 // canonicalName: cc.unitmesh.code.interpreter.KotlinInterpreterTest
+0.77546304 // canonicalName: org.archguard.scanner.analyser.count.LanguageWorkerTest.bomSkip.bomSkip2.checkComplexity.checkComplexity2.processByFileFromResource.processKotlinDemo.languageServiceFile
+0.76314676 // canonicalName: org.archguard.scanner.analyser.ScalaAnalyser
+0.75397754 // canonicalName: com.thoughtworks.archguard.insights.application.IssueInsightFilterTest
+0.74462515 // canonicalName: org.archguard.scanner.analyser.SimpleEstimateContext
+0.74160945 // canonicalName: com.thoughtworks.archguard.scanner2.domain.model.MethodMetric
+0.74107826 // canonicalName: com.thoughtworks.archguard.code.module.domain.AbstractAnalysisServiceTest.setUp.should_calculate_package_abstract_ratio
+0.74130785 // canonicalName: org.archguard.scanner.analyser.diffchanges.GitDiffer.countBetween.calculateChange
+0.741813 // canonicalName: org.archguard.doc.generator.KotlinAnalysisTest
+0.7492634 // canonicalName: org.archguard.scanner.analyser.JavaAnalyser.analyse.analysisBasicInfoByFile
+0.7600594 // canonicalName: cc.unitmesh.code.interpreter.KotlinInterpreter.eval
+0.7631941 // canonicalName: org.archguard.aaac.repl.ArchdocInterpreter
+0.77764046 // canonicalName: org.archguard.scanner.analyser.KotlinAnalyser
+
+```
+根据提供的代码，可以看出Kotlin代码的分析和处理是通过使用不同的类和方法来完成的。以下是关键的类和方法：
+
+1. `KotlinAnalyser`类：这个类是用来分析Kotlin代码的。它实现了`LanguageSourceCodeAnalyser`接口，并且有一个`analyse()`方法来执行代码分析。在`analyse()`方法中，它使用`getFilesByPath()`方法获取指定路径下的所有Kotlin文件，并对每个文件调用`analysisByFile()`方法进行分析。最后，它将分析结果保存到`client`中。
+
+2. `analysisByFile()`方法：这个方法用于分析单个Kotlin文件。它首先读取文件内容，然后使用`kotlinast.KotlinAnalyser`类的`analysis()`方法对代码进行分析。分析结果包括数据结构和函数列表。最后，它将分析结果返回。
+
+3. `KotlinReplWrapper`类：这个类是用来执行Kotlin代码的。它有一个`eval()`方法，可以执行传入的Kotlin代码，并返回执行结果。
+
+综上所述，Kotlin代码的分析和处理是通过使用`KotlinAnalyser`类和`KotlinReplWrapper`类来完成的。`KotlinAnalyser`类用于分析代码并保存分析结果，而`KotlinReplWrapper`类用于执行代码并返回执行结果。
 

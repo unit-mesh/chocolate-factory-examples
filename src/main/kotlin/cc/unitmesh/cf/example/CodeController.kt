@@ -15,7 +15,7 @@ import java.util.*
 @RequestMapping("/api")
 class CodeController(val workflow: CodeSemanticWorkflow) {
     @PostMapping("/code-query")
-    fun query(@RequestBody question: QuestionRequest): Flowable<WorkflowResult> {
+    fun query(@RequestBody question: QuestionRequest): Flowable<String> {
         val stage = CodeSemanticWorkflow.ANALYSIS
         val webContext = ChatWebContext(
             messages = listOf(
@@ -26,6 +26,7 @@ class CodeController(val workflow: CodeSemanticWorkflow) {
         )
 
         return workflow.execute(stage, webContext)
+            .map(WorkflowResult::responseMsg)
     }
 }
 
