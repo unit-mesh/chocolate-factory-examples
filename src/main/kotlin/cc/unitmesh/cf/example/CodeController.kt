@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController
 import java.util.*
 
 @RestController
-@RequestMapping("/api/code-query")
-class CodeQueryController(val workflow: CodeSemanticWorkflow) {
-    @PostMapping
+@RequestMapping("/api")
+class CodeController(val workflow: CodeSemanticWorkflow) {
+    @PostMapping("/code-query")
     fun query(@RequestBody question: QuestionRequest): Flowable<WorkflowResult> {
         val stage = CodeSemanticWorkflow.ANALYSIS
         val webContext = ChatWebContext(

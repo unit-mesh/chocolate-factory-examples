@@ -81,3 +81,22 @@ stop
 ```
 
 希望以上信息能够回答您的问题。
+
+## 文档
+
+环境准备：
+
+1. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
+2. Start project: `./gradlew bootRun`
+
+### 创建索引
+
+1. 下载 [ArchGuard Scanner CLI](https://github.com/archguard/archguard/releases) （搜索  scanner_cli-2.0.7-all.jar）
+2. 运行索引
+
+```
+java -jar scanner_cli-2.0.6-all.jar --language=Kotlin --output=http --server-url=http://localhost:18080 --
+path=/Volumes/source/ai/chocolate-factory --with-function-code
+```
+
+
