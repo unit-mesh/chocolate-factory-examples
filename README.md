@@ -1,8 +1,16 @@
-# Chocolate Factory
+# Chocolate Factory Example
+
+处理流程：
 
 ![Query && Indexing](docs/query-indexing.png)
 
-Documents:
+需要了解的基本知识：
+
+- 基本的 Kotlin 语法
+- 如何写好 Prompt 
+- 检索增强（Retrieval Augmented Generation）相关的概念，可参考：RAG: [https://framework.unitmesh.cc/docs/rag](https://framework.unitmesh.cc/docs/rag)
+
+本项目相关的 Chocolate Factory 文档:
 
 - RAG: [https://framework.unitmesh.cc/docs/rag](https://framework.unitmesh.cc/docs/rag)
 - 代码拆分：https://framework.unitmesh.cc/docs/code-splitter
