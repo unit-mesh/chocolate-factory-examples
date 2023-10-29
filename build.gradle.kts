@@ -37,14 +37,14 @@ dependencies {
 	implementation("com.phodal.chapi:chapi-domain:2.1.3")
 
 	// 核心库
-	implementation("cc.unitmesh:cocoa-core:0.3.4")
+	implementation("cc.unitmesh:cocoa-core:0.4.1")
 	// 代码拆分
-	implementation("cc.unitmesh:code-splitter:0.3.4")
+	implementation("cc.unitmesh:code-splitter:0.4.1")
 	// Elastisearch 向量化存储，普通搜索
-	implementation("cc.unitmesh:store-elasticsearch:0.3.4")
+	implementation("cc.unitmesh:store-elasticsearch:0.4.1")
 	// 本地化的 embedding
 	// 用于每次更新代码，重新 embedding => CPU
-	implementation("cc.unitmesh:sentence-transformers:0.3.4")
+	implementation("cc.unitmesh:sentence-transformers:0.4.1")
 
 	runtimeOnly("com.h2database:h2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
